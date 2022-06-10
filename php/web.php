@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
+use App\Http\Middleware\FirstMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/test/{Goodmorning?}', function ($Goodmorning = 'おはようございます') {
-   return $Goodmorning;
-});
-
+Route::get('/', [TestController::class, 'index']
+);
+Route::post('/',[TestController::class,'post']);
